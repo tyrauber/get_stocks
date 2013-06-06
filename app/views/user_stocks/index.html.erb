@@ -1,0 +1,91 @@
+<h1>Listing Stocks for <%= @user.name %></h1>
+
+<table>
+  <tr>
+    <th>symbol</th>
+    <th>pretty_symbol</th>
+    <th>symbol_lookup_url</th>
+    <th>company</th>
+    <th>exchange</th>
+    <th>exchange_timezone</th>
+    <th>exchange_utc_offset</th>
+    <th>exchange_closing</th>
+    <th>divisor</th>
+    <th>currency</th>
+    <th>last</th>
+    <th>high</th>
+    <th>low</th>
+    <th>volume</th>
+    <th>avg_volume</th>
+    <th>market_cap</th>
+    <th>open</th>
+    <th>y_close</th>
+    <th>change</th>
+    <th>perc_change</th>
+    <th>delay</th>
+    <th>trade_timestamp</th>
+    <th>trade_date_utc</th>
+    <th>trade_time_utc</th>
+    <th>current_date_utc</th>
+    <th>current_time_utc</th>
+    <th>symbol_url</th>
+    <th>chart_url</th>
+    <th>disclaimer_url</th>
+    <th>ecn_url</th>
+    <th>isld_last</th>
+    <th>isld_trade_date_utc</th>
+    <th>isld_trade_time_utc</th>
+    <th>brut_last</th>
+    <th>brut_trade_date_utc</th>
+    <th>brut_trade_time_utc</th>
+    <th>daylight_savings</th>
+  </tr>
+
+<% @stocks.each do |stock| %>
+  <tr>
+    <td><%= stock.symbol %></td>
+    <td><%= stock.symbol %></td>
+    <td><%= stock.pretty_symbol %></td>
+    <td><%= stock.symbol_lookup_url %></td>
+    <td><%= stock.company %></td>
+    <td><%= stock.exchange %></td>
+    <td><%= stock.exchange_timezone %></td>
+    <td><%= stock.exchange_utc_offset %></td>
+    <td><%= stock.exchange_closing %></td>
+    <td><%= stock.divisor %></td>
+    <td><%= stock.currency %></td>
+    <td><%= stock.last %></td>
+    <td><%= stock.high %></td>
+    <td><%= stock.low %></td>
+    <td><%= stock.volume %></td>
+    <td><%= stock.avg_volume %></td>
+    <td><%= stock.market_cap %></td>
+    <td><%= stock.open %></td>
+    <td><%= stock.y_close %></td>
+    <td><%= stock.change %></td>
+    <td><%= stock.perc_change %></td>
+    <td><%= stock.delay %></td>
+    <td><%= stock.trade_timestamp %></td>
+    <td><%= stock.trade_date_utc %></td>
+    <td><%= stock.trade_time_utc %></td>
+    <td><%= stock.current_date_utc %></td>
+    <td><%= stock.current_time_utc %></td>
+    <td><%= stock.symbol_url %></td>
+    <td><%= stock.chart_url %></td>
+    <td><%= stock.disclaimer_url %></td>
+    <td><%= stock.ecn_url %></td>
+    <td><%= stock.isld_last %></td>
+    <td><%= stock.isld_trade_date_utc %></td>
+    <td><%= stock.isld_trade_time_utc %></td>
+    <td><%= stock.brut_last %></td>
+    <td><%= stock.brut_trade_date_utc %></td>
+    <td><%= stock.brut_trade_time_utc %></td>
+    <td><%= stock.daylight_savings %></td>
+    <td><%= link_to 'Destroy', user_user_stock_path(@user.to_param, stock.symbol), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User stock', new_user_user_stock_path(@user.to_param) %>
