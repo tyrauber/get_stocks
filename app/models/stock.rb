@@ -6,11 +6,9 @@ class Stock < ActiveRecord::Base
   before_save :refresh
   
   def refresh
-    if updated_at.nil? or updated_at >=  1.hour.ago
-      data = StockQuote::Stock.quote(symbol)
-      data.instance_values.map do |k,v| 
-        self[k] = v
-      end
+    data = StockQuote::Stock.quote(symbol)
+    data.instance_values.map do |k,v| 
+      self[k] = v
     end
   end
   

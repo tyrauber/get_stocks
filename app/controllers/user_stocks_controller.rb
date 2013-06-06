@@ -6,7 +6,7 @@ class UserStocksController < ApplicationController
     @user = User.find(params[:user_id])
     @stocks = @user.stocks
     @stocks.each do |stock|
-      stock.save
+      stock.save if stock.updated_at >=  1.hour.ago
     end
     respond_to do |format|
       format.html # index.html.erb
