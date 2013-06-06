@@ -3,7 +3,7 @@ get_stocks
 
 Sample 'stock_quote' rails 3 application
 
-A sample rails 3 application showcasing the [https://github.com/tyrauber/stock_quote](the stock_quote gem), enabling users to add stocks by symbols and get current quotes within the last hour.
+A sample rails 3 application showcasing the [the stock_quote gem](https://github.com/tyrauber/stock_quote), enabling users to add stocks by symbols and get current quotes within the last hour.
 
 # Usage
 
